@@ -1,0 +1,9 @@
+category_key,label,gem_type,is_gate,sort_order,reward_mode,gem_pool
+institute_tour,Institute Tour,joker,true,1,all,
+campus_history,Campus History,joker,true,2,all,
+canteen,Canteen / Eateries,diamond,false,3,weighted,2
+heritage,Heritage,ruby,false,4,weighted,1
+sports,Sports,sapphire,false,5,weighted,3
+entrepreneurship,Entrepreneurship,emerald,false,6,weighted,1
+green_spaces,Green Spaces,onyx,false,7,weighted,1
+hidden_places,Hidden Places,joker,false,8,weighted,2

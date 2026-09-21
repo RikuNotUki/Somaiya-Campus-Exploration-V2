@@ -1,0 +1,43 @@
+category_key,name,lat,lng,proximity_radius_m,did_you_know,info_md,image_url,pdf_url,video_url,sort_order
+institute_tour,Main Gate & Reception,19.0728,72.8990,40,"Placeholder fact about the main gate.","## History\nPlaceholder history text.\n\n## Awards\nPlaceholder awards text.\n\n## Placements\nPlaceholder placements text.\n\n## Alumni\nPlaceholder alumni text.",,,,1
+institute_tour,Central Library,19.0731,72.8993,40,"Placeholder fact about the library.","## History\nPlaceholder text.",,,,2
+institute_tour,Engineering Block,19.0734,72.8996,40,"Placeholder fact about the engineering block.","## History\nPlaceholder text.",,,,3
+institute_tour,Auditorium,19.0737,72.8999,40,"Placeholder fact about the auditorium.","## History\nPlaceholder text.",,,,4
+campus_history,KJ Statue,19.0725,72.8985,40,"Placeholder fact about the KJ Statue.","## Then vs Now\nPlaceholder Google Earth then-vs-now description.",,,,1
+campus_history,Founder's Hall,19.0722,72.8982,40,"Placeholder fact about Founder's Hall.","## History\nPlaceholder text.",,,,2
+campus_history,Old Admin Block,19.0719,72.8979,40,"Placeholder fact about the old admin block.","## History\nPlaceholder text.",,,,3
+campus_history,Heritage Archway,19.0716,72.8976,40,"Placeholder fact about the archway.","## History\nPlaceholder text.",,,,4
+canteen,Main Canteen,19.0740,72.8988,30,"Placeholder eatery fact.","Placeholder info about the main canteen.",,,,1
+canteen,Engineering Canteen,19.0743,72.8991,30,"Placeholder eatery fact.","Placeholder info.",,,,2
+canteen,Juice Corner,19.0746,72.8994,30,"Placeholder eatery fact.","Placeholder info.",,,,3
+canteen,Snacks Kiosk,19.0749,72.8997,30,"Placeholder eatery fact.","Placeholder info.",,,,4
+canteen,South Campus Cafe,19.0752,72.9000,30,"Placeholder eatery fact.","Placeholder info.",,,,5
+canteen,Hostel Mess,19.0755,72.9003,30,"Placeholder eatery fact.","Placeholder info.",,,,6
+canteen,Rooftop Cafeteria,19.0758,72.9006,30,"Placeholder eatery fact.","Placeholder info.",,,,7
+heritage,Heritage Building A,19.0710,72.8970,40,"Placeholder heritage fact.","Placeholder info.",,,,1
+heritage,Heritage Building B,19.0707,72.8967,40,"Placeholder heritage fact.","Placeholder info.",,,,2
+heritage,Old Clock Tower,19.0704,72.8964,40,"Placeholder heritage fact.","Placeholder info.",,,,3
+heritage,Heritage Courtyard,19.0701,72.8961,40,"Placeholder heritage fact.","Placeholder info.",,,,4
+heritage,Founders' Wall,19.0698,72.8958,40,"Placeholder heritage fact.","Placeholder info.",,,,5
+sports,Football Ground,19.0760,72.8960,50,"Placeholder sports fact.","Placeholder info.",,,,1
+sports,Cricket Nets,19.0763,72.8963,50,"Placeholder sports fact.","Placeholder info.",,,,2
+sports,Basketball Court,19.0766,72.8966,50,"Placeholder sports fact.","Placeholder info.",,,,3
+sports,Athletics Track,19.0769,72.8969,50,"Placeholder sports fact.","Placeholder info.",,,,4
+sports,Indoor Sports Complex,19.0772,72.8972,50,"Placeholder sports fact.","Placeholder info.",,,,5
+sports,Swimming Pool,19.0775,72.8975,50,"Placeholder sports fact.","Placeholder info.",,,,6
+sports,Table Tennis Hall,19.0778,72.8978,50,"Placeholder sports fact.","Placeholder info.",,,,7
+sports,Gymnasium,19.0781,72.8981,50,"Placeholder sports fact.","Placeholder info.",,,,8
+sports,Badminton Courts,19.0784,72.8984,50,"Placeholder sports fact.","Placeholder info.",,,,9
+sports,Volleyball Court,19.0787,72.8987,50,"Placeholder sports fact.","Placeholder info.",,,,10
+entrepreneurship,Incubation Cell,19.0715,72.9000,40,"Placeholder entrepreneurship fact.","Placeholder info.",,,,1
+entrepreneurship,Startup Lab,19.0712,72.9003,40,"Placeholder entrepreneurship fact.","Placeholder info.",,,,2
+entrepreneurship,Innovation Hub,19.0709,72.9006,40,"Placeholder entrepreneurship fact.","Placeholder info.",,,,3
+green_spaces,Central Lawn,19.0730,72.9010,40,"Placeholder green space fact.","Placeholder info.",,,,1
+green_spaces,Botanical Garden,19.0733,72.9013,40,"Placeholder green space fact.","Placeholder info.",,,,2
+green_spaces,Meditation Grove,19.0736,72.9016,40,"Placeholder green space fact.","Placeholder info.",,,,3
+green_spaces,Lakeside Path,19.0739,72.9019,40,"Placeholder green space fact.","Placeholder info.",,,,4
+hidden_places,Secret Courtyard,19.0700,72.9020,30,"Placeholder hidden-place fact.","Placeholder info.",,,,1
+hidden_places,Old Well,19.0697,72.9023,30,"Placeholder hidden-place fact.","Placeholder info.",,,,2
+hidden_places,Rooftop Viewpoint,19.0694,72.9026,30,"Placeholder hidden-place fact.","Placeholder info.",,,,3
+hidden_places,Forgotten Mural,19.0691,72.9029,30,"Placeholder hidden-place fact.","Placeholder info.",,,,4
+hidden_places,Quiet Reading Nook,19.0688,72.9032,30,"Placeholder hidden-place fact.","Placeholder info.",,,,5

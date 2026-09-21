@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors pulled from the Figma file (Campus Exploration) */
+  --color-ink: #2c2c2a;       /* Tuatara — primary text */
+  --color-ink-soft: #5f5e5a;  /* Chicago — secondary text */
+  --color-ink-muted: #888880; /* Bitter — tertiary text */
+  --color-ink-faint: #b4b2a9; /* Tide — placeholder text / joker gem */
+  --color-border: #d3d1c7;    /* Timberwolf — card borders */
+  --color-border-strong: #b4b2a9;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1efe8;  /* Pampas — placeholder blocks */
+  --color-surface-chip: #f0f0ef;
+
+  --color-accent: #185fa5;    /* Fun Blue — primary actions, sapphire gem */
+  --color-streak: #854f0b;    /* Rusty Nail — streak counter */
+  --color-success: #92d344;   /* Redeemable prize state */
+
+  --color-gem-joker: #b4b2a9;
+  --color-gem-diamond: #86b9ec;
+  --color-gem-ruby: #d73636;
+  --color-gem-sapphire: #185fa5;
+  --color-gem-emerald: #639922;
+  --color-gem-onyx: #2c2c2a;
+
+  --radius-card: 16.6px;
+  --radius-field: 11px;
+  --radius-frame: 30.5px;
+
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #e9e7df;
+}
+
+.app-frame {
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--color-surface);
+}
+
+@media (min-width: 640px) {
+  .app-frame {
+    min-height: calc(100vh - 48px);
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: var(--radius-frame);
+    border: 1.4px solid var(--color-border);
+    overflow: hidden;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
