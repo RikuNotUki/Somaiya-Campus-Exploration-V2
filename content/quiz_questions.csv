@@ -1,4 +1,20 @@
 location_name,prompt,option_a,option_b,option_c,option_d,correct_option,shard_reward
-Main Gate & Reception,"In what year was the main campus gate built? (placeholder)",1985,1992,2001,2010,a,1
-Central Library,"How many floors does the Central Library have? (placeholder)",2,3,4,5,c,1
-KJ Statue,"The KJ Statue commemorates which founder? (placeholder)",Founder A,Founder B,Founder C,Founder D,b,1
+Main Gate & Reception,In what year was the main campus gate built? (placeholder),1985,1992,2001,2010,a,1
+Central Library,How many floors does the Central Library have? (placeholder),2,3,4,5,c,1
+KJ Statue,The KJ Statue commemorates which founder? (placeholder),Founder A,Founder B,Founder C,Founder D,b,1
+Engineering Canteen,What sustainable practice is carried out near the Engineering Canteen?,Solar power generation,Food waste vermicomposting,Rainwater harvesting,Plastic recycling,b,1
+Govindas Canteen,Which core architectural strategy was used in Govindas Canteen to help lower student stress?,Soundproof booths,Daylighting and natural light,Dark theme aesthetic,Rooftop seating,b,1
+Sports Canteen,Which iconic partner operates the Sports Canteen inside Eklavya Sports Complex?,Jimmy Boy,Cafe Coffee Day,Prithvi Cafe,Irani Chai Co.,a,1
+Aurobindo Canteen,What is the long-term goal for the biogas plant situated behind Aurobindo Canteen?,Power the campus streetlights,Pipe gas back to fuel the canteen's cooking,Convert waste into biofuel for campus buses,Export electricity to the local grid,b,1
+Kutchi Haveli,How were the materials for building the Kutchi Haveli sourced?,Imported from Europe,Salvaged from old demolished buildings in Kutch,Newly carved from local marble,Donated by modern architects,b,1
+Saraswati,What deity stands on the outside of the Saraswati building?,Lord Ganesha,Dariyalal,Goddess Saraswati,Lord Shiva,b,1
+Sanskriti Vihara,Sanskriti Vihara's architectural layout is inspired by which ancient Indian structure?,Stupas,Baolis (stepwells),Rock-cut caves,Vedic altars,b,1
+Basketball Court (Eklavya),What type of events are primarily hosted at the campus Basketball Court?,National marathons,Inter-collegiate leagues and recreational play,Swimming competitions,Esports tournaments,b,1
+Table Tennis,Which global championship did Eklavya host in 2026?,World University Badminton Championship,FISU World University Squash Championship,International Tennis Federation Junior Cup,Asian Table Tennis Championship,b,1
+RIIDL,Which key facility does RIIDL provide to campus innovators and startups?,24/7 access to workspaces and FabLabs,Free commercial manufacturing units,Stock market trading desks,Legal litigation courtrooms,a,1
+BIO RIIDL,What distinction does BIO RIIDL hold in India?,India's largest robotics facility,India's first DIY Bio-Lab and incubator,India's first AI supercomputing node,India's largest agrarian seed bank,b,1
+Nakshatra Garden,How are the plants organized inside the Nakshatra Garden?,Alphabetically by botanical name,According to astrological constellations (Nakshatras),By height and flowering season,Based on soil acidity levels,b,1
+Somaiya Statue Area,Whose statue is at the center of the Somaiya Statue Area?,Rabindranath Tagore,Karamshi Jethabhai Somaiya,Mahatma Gandhi,Vikram Sarabhai,b,1
+In front of Polytechnic,What primary role does the green lawn in front of Polytechnic serve?,Vehicle parking lot,Student hang-out and event space,Agricultural trial plot,Sports equipment storage,b,1
+Botanical Garden,Which academic department manages the Botanical Garden?,Department of Environmental Studies,Department of Botany,Department of Chemical Engineering,Department of Architecture,b,1
+Biodiversity Garden,What is the main ecological objective of the Biodiversity Garden?,Cultivating commercial timber,Sustaining local flora/fauna and serving as a campus green lung,Testing chemical fertilizers,Hosting outdoor movie screenings,b,1
