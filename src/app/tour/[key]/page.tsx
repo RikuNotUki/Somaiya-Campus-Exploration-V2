@@ -1,16 +1,15 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState, useRef, use } from "react";
 import { useRouter } from "next/navigation";
 import Frame from "@/components/Frame";
-import { TopBar, PrimaryButton, GemDot } from "@/components/ui";
+import { TopBar, GemDot } from "@/components/ui";
+import InfoCardCarousel from "@/components/InfoCardCarousel";
 import { GemType } from "@/lib/gems";
 
 type Location = {
   id: string;
   name: string;
-  did_you_know: string | null;
-  info_md: string | null;
   proximity_radius_m: number;
   geotaggedAt: string | null;
   quizPassedAt: string | null;
@@ -23,8 +22,10 @@ export default function TourCategoryPage({ params }: { params: Promise<{ key: st
   const [categoryLabel, setCategoryLabel] = useState("");
   const [locations, setLocations] = useState<Location[] | null>(null);
   const [index, setIndex] = useState(0);
-  const [busy, setBusy] = useState(false);
+  const [status, setStatus] = useState<"idle" | "watching" | "error">("idle");
   const [message, setMessage] = useState<string | null>(null);
+  const watchIdRef = useRef<number | null>(null);
+  const checkingRef = useRef(false); // prevents overlapping geotag POSTs while a watch is firing rapidly
 
   function load() {
     fetch(`/api/categories/${key}/locations`)
@@ -41,7 +42,65 @@ export default function TourCategoryPage({ params }: { params: Promise<{ key: st
 
   useEffect(load, [key]);
 
-  if (!locations) {
+  const loc = locations?.[index];
+
+  // Automatically watches the student's position in the background and
+  // verifies proximity the moment they're close enough — no button to tap.
+  useEffect(() => {
+    function stopWatching() {
+      if (watchIdRef.current !== null) {
+        navigator.geolocation.clearWatch(watchIdRef.current);
+        watchIdRef.current = null;
+      }
+    }
+
+    if (!loc || loc.geotaggedAt) {
+      stopWatching();
+      setStatus("idle");
+      return;
+    }
+
+    if (!("geolocation" in navigator)) {
+      setStatus("error");
+      setMessage("Your browser doesn't support location — try a different device.");
+      return;
+    }
+
+    setStatus("watching");
+    setMessage(null);
+    checkingRef.current = false;
+
+    watchIdRef.current = navigator.geolocation.watchPosition(
+      async (pos) => {
+        if (checkingRef.current) return;
+        checkingRef.current = true;
+        try {
+          const res = await fetch(`/api/locations/${loc.id}/geotag`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
+          });
+          const data = await res.json();
+          if (res.ok && data.arrived) {
+            stopWatching();
+            load();
+          }
+        } finally {
+          checkingRef.current = false;
+        }
+      },
+      () => {
+        setStatus("error");
+        setMessage("Couldn't get your location — check location permissions and try again.");
+      },
+      { enableHighAccuracy: true, maximumAge: 5000, timeout: 15000 }
+    );
+
+    return stopWatching;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loc?.id, loc?.geotaggedAt]);
+
+  if (!locations || !loc) {
     return (
       <Frame>
         <TopBar back="/tour" />
@@ -52,41 +111,7 @@ export default function TourCategoryPage({ params }: { params: Promise<{ key: st
     );
   }
 
-  const loc = locations[index];
   const completedCount = locations.filter((l) => l.quizPassedAt).length;
-
-  async function handleGeotag() {
-    setBusy(true);
-    setMessage(null);
-    if (!("geolocation" in navigator)) {
-      setMessage("Your browser doesn't support location — try a different device.");
-      setBusy(false);
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      async (pos) => {
-        const res = await fetch(`/api/locations/${loc.id}/geotag`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
-        });
-        const data = await res.json();
-        if (!res.ok) {
-          setMessage(data.error ?? "Couldn't geo-tag this spot.");
-        } else if (!data.arrived) {
-          setMessage(data.message);
-        } else {
-          load();
-        }
-        setBusy(false);
-      },
-      () => {
-        setMessage("Couldn't get your location — check location permissions.");
-        setBusy(false);
-      },
-      { enableHighAccuracy: true, timeout: 10000 }
-    );
-  }
 
   return (
     <Frame>
@@ -112,17 +137,9 @@ export default function TourCategoryPage({ params }: { params: Promise<{ key: st
               photo
             </span>
           </div>
-          <p className="font-bold mb-2" style={{ color: "var(--color-ink)" }}>
+          <p className="font-bold mb-3" style={{ color: "var(--color-ink)" }}>
             {loc.name}
           </p>
-          {loc.did_you_know && (
-            <p className="text-sm mb-3" style={{ color: "var(--color-ink-soft)" }}>
-              <span className="font-bold" style={{ color: "var(--color-ink)" }}>
-                Did you know?{" "}
-              </span>
-              {loc.did_you_know}
-            </p>
-          )}
 
           {loc.quizPassedAt ? (
             <div className="mt-auto flex items-center gap-2 text-sm" style={{ color: "var(--color-success)" }}>
@@ -134,13 +151,21 @@ export default function TourCategoryPage({ params }: { params: Promise<{ key: st
               )}
             </div>
           ) : loc.geotaggedAt ? (
-            <PrimaryButton onClick={() => router.push(`/tour/${key}/quiz/${loc.id}`)}>
-              Take the quiz
-            </PrimaryButton>
+            <InfoCardCarousel
+              locationId={loc.id}
+              onContinue={() => router.push(`/tour/${key}/quiz/${loc.id}`)}
+            />
           ) : (
-            <PrimaryButton onClick={handleGeotag} disabled={busy}>
-              {busy ? "Checking your location…" : "I'm here — geo-tag"}
-            </PrimaryButton>
+            // Nothing about this spot is revealed until proximity is verified —
+            // just a quiet status while it checks in the background.
+            <div className="flex flex-col items-center gap-2 py-4">
+              <div className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: "var(--color-accent)" }} />
+              <p className="text-sm text-center" style={{ color: "var(--color-ink-soft)" }}>
+                {status === "watching"
+                  ? "Walk to this spot — we'll unlock it automatically."
+                  : "Waiting for location access…"}
+              </p>
+            </div>
           )}
 
           {message && (

@@ -1,30 +1,24 @@
-category_key,name,lat,lng,proximity_radius_m,did_you_know,info_md,image_url,pdf_url,video_url,sort_order
-institute_tour,Main Gate & Reception,19.0728,72.8990,40,Placeholder fact about the main gate.,## History\nPlaceholder history text.\n\n## Awards\nPlaceholder awards text.\n\n## Placements\nPlaceholder placements text.\n\n## Alumni\nPlaceholder alumni text.,,,,1
-institute_tour,Central Library,19.0731,72.8993,40,Placeholder fact about the library.,## History\nPlaceholder text.,,,,2
-institute_tour,Engineering Block,19.0734,72.8996,40,Placeholder fact about the engineering block.,## History\nPlaceholder text.,,,,3
-institute_tour,Auditorium,19.0737,72.8999,40,Placeholder fact about the auditorium.,## History\nPlaceholder text.,,,,4
-campus_history,KJ Statue,19.0725,72.8985,40,Placeholder fact about the KJ Statue.,## Then vs Now\nPlaceholder Google Earth then-vs-now description.,,,,1
-campus_history,Founder's Hall,19.0722,72.8982,40,Placeholder fact about Founder's Hall.,## History\nPlaceholder text.,,,,2
-campus_history,Old Admin Block,19.0719,72.8979,40,Placeholder fact about the old admin block.,## History\nPlaceholder text.,,,,3
-campus_history,Heritage Archway,19.0716,72.8976,40,Placeholder fact about the archway.,## History\nPlaceholder text.,,,,4
-hidden_places,Secret Courtyard,19.0700,72.9020,30,Placeholder hidden-place fact.,Placeholder info.,,,,1
-hidden_places,Old Well,19.0697,72.9023,30,Placeholder hidden-place fact.,Placeholder info.,,,,2
-hidden_places,Rooftop Viewpoint,19.0694,72.9026,30,Placeholder hidden-place fact.,Placeholder info.,,,,3
-hidden_places,Forgotten Mural,19.0691,72.9029,30,Placeholder hidden-place fact.,Placeholder info.,,,,4
-hidden_places,Quiet Reading Nook,19.0688,72.9032,30,Placeholder hidden-place fact.,Placeholder info.,,,,5
-canteen,Engineering Canteen,0,0,30,Food waste from campus canteens is composted right here as part of the Green Campus Initiative.,"Sits near the Engineering building's vermicomposting pits; food waste from campus canteens is composted right on site as part of the Green Campus Initiative. It gets packed at lunchtime, so come early or be ready to hunt for a seat.",,,,1
-canteen,Govindas Canteen,0,0,30,"Runs on a ""Three Foods"" philosophy: food for thought, food for health, and food for the soul.","The design runs on a ""Three Foods"" philosophy: food for thought, food for health, and food for the soul, the idea being that eating should feel like an extension of learning, not a break from it. Architects deliberately focused on daylighting for this project: massive, open, sunlit spaces meant to filter in natural light, intended to lower stress and encourage a sense of peace while students study or eat. Unlike older college canteens that were just quick grab-and-go spots, the new layout was engineered as a collaboration hub — a space meant for lingering, working, and connecting, not just refueling.",,,,2
-canteen,Sports Canteen,0,0,30,"Runs as a dedicated cafe inside the Eklavya Sports Complex, operated in partnership with Jimmy Boy.","Runs as a dedicated cafe inside the Eklavya Sports Complex, operated in partnership with Jimmy Boy. Its menu is dominated by cafe-style comfort items, continental snacks, and quick street bites.",,,,3
-canteen,Aurobindo Canteen,0,0,30,Its food waste feeds a biogas plant located right behind the canteen.,"Its food waste feeds a biogas plant located right behind the canteen. The biogas generated isn't in active use yet, but the plan is to close the loop completely: waste from the canteen generates gas, and that same gas gets piped back to fuel the canteen's own cooking.",,,,4
-heritage,Kutchi Haveli,0,0,30,"Built using ""recycled"" architectural parts salvaged from old buildings in Kutch villages.","The Haveli was built using ""recycled"" architectural parts salvaged from old buildings in Kutch villages that were being demolished for modern construction, preserving craftsmanship that would otherwise be lost. It reflects the Somaiya family's own roots: they're Kutchi Lohanas, and this heritage runs through several campus landmarks. Part of a wider Trust initiative that's also restoring old Kutch homes into village libraries (a project called Somaiya Pustakalaya).",,,,1
-heritage,Saraswati,0,0,30,"Built with a central courtyard featuring a Tulsi plant and a water fountain, evoking the sound of a flowing river.","Built with a central courtyard featuring a Tulsi plant and a water fountain, meant to evoke the sound of a flowing river. On the outside stands a statue of Dariyalal, the Somaiya family's guardian deity as Kutchi Lohanas, also revered as Jhulelal by Sindhis and as Zinda Peer/Lal Shahbaz Qalandar by Sufis.",,,,2
-heritage,Sanskriti Vihara,0,0,30,"Connected to the Somaiya Bharatiya Sanskriti Peetham, founded for deep study of Vedic religion and interfaith dialogue.","Connected to the Somaiya Bharatiya Sanskriti Peetham, founded to promote deep study of Vedic religion and interfaith dialogue. The building's layout is a modern reinterpretation of ancient Indian baolis (stepwells).",,,,3
-sports,Basketball Court (Eklavya),0,0,30,"In 2026, Eklavya hosted the FISU World University Squash Championship.","In 2026, it hosted the FISU World University Squash Championship; Team India (both Somaiya students!) won an individual Gold, an individual Bronze, and a team Silver.",,,,1
-sports,Table Tennis,0,0,30,An indoor arena with professional-grade tables and flooring for training and tournaments.,"An indoor arena within the sports infrastructure, equipped with professional-grade tables and flooring to accommodate recreational sessions, training, and tournaments.",,,,2
-entrepreneurship,RIIDL,0,0,30,A technology business incubator supported by DST and DBT-BIRAC.,"Research Innovation Incubation Design Labs (RIIDL) serves as a technology business incubator supported by DST and DBT-BIRAC. It provides startups with 24/7 access to workspaces, FabLabs, AI/ML labs, and seed funding support.",,,,1
-entrepreneurship,BIO RIIDL,0,0,30,India's first DIY Bio-Lab and incubator focused on life sciences and synthetic biology.,"India's first DIY Bio-Lab and incubator focused on life sciences, biotechnology, and synthetic biology. It gives student innovators and early-stage bio-entrepreneurs access to specialized wet lab facilities, testing equipment, and bio-incubation grants.",,,,2
-green_spaces,Nakshatra Garden,0,0,30,Features plants arranged according to astrological constellations (Nakshatras).,"Maintained by the project office as part of the Green Campus Initiative, featuring plants arranged according to astrological constellations (Nakshatras) with medicinal and religious significance.",,,,1
-green_spaces,Somaiya Statue Area,0,0,30,A landscaped green patch built around the memorial statue of founder Karamshi Jethabhai Somaiya.,"A central landscaped green patch on campus built around the memorial statue of the founder, Karamshi Jethabhai Somaiya, offering a quiet seating spot under mature shade trees.",,,,2
-green_spaces,In front of Polytechnic,0,0,30,A popular student hang-out and event space outside the K. J. Somaiya Polytechnic building.,"An open green lawn situated directly outside the K. J. Somaiya Polytechnic building, acting as a popular student hang-out and event space shaded by native trees.",,,,3
-green_spaces,Botanical Garden,0,0,30,"Managed alongside the Department of Botany, housing a wide collection of plant species.","Managed alongside the Department of Botany, housing a wide collection of plant species, herbs, and flora used for student learning, research, and campus biodiversity conservation.",,,,4
-green_spaces,Biodiversity Garden,0,0,30,A dedicated ecological zone created to sustain local flora and fauna near the sports facilities and KJSIM.,"A dedicated ecological zone near the sports facilities and KJSIM, created to sustain local flora and fauna, attract birdlife, and serve as a green lung for the campus.",,,,5
+category_key,name,lat,lng,proximity_radius_m,did_you_know,image_url,pdf_url,video_url,sort_order
+institute_tour,SSD (Bhaskaracharya Block),0,0,40,Placeholder teaser fact about SSD — real content to follow.,,,,1
+campus_history,Somaiya Statue,0,0,40,Placeholder teaser fact about the Somaiya Statue — real content to follow.,,,,1
+hidden_places,Secret Courtyard,19.0700,72.9020,30,Placeholder hidden-place fact.,,,,1
+hidden_places,Old Well,19.0697,72.9023,30,Placeholder hidden-place fact.,,,,2
+hidden_places,Rooftop Viewpoint,19.0694,72.9026,30,Placeholder hidden-place fact.,,,,3
+hidden_places,Forgotten Mural,19.0691,72.9029,30,Placeholder hidden-place fact.,,,,4
+hidden_places,Quiet Reading Nook,19.0688,72.9032,30,Placeholder hidden-place fact.,,,,5
+canteen,Engineering Canteen,0,0,30,Food waste from campus canteens is composted right here as part of the Green Campus Initiative.,,,,1
+canteen,Govindas Canteen,0,0,30,"Runs on a ""Three Foods"" philosophy: food for thought, food for health, and food for the soul.",,,,2
+canteen,Sports Canteen,0,0,30,"Runs as a dedicated cafe inside the Eklavya Sports Complex, operated in partnership with Jimmy Boy.",,,,3
+canteen,Aurobindo Canteen,0,0,30,Its food waste feeds a biogas plant located right behind the canteen.,,,,4
+heritage,Kutchi Haveli,0,0,30,"Built using ""recycled"" architectural parts salvaged from old buildings in Kutch villages.",,,,1
+heritage,Saraswati,0,0,30,"Built with a central courtyard featuring a Tulsi plant and a water fountain, evoking the sound of a flowing river.",,,,2
+heritage,Sanskriti Vihara,0,0,30,"Connected to the Somaiya Bharatiya Sanskriti Peetham, founded for deep study of Vedic religion and interfaith dialogue.",,,,3
+sports,Basketball Court (Eklavya),0,0,30,"In 2026, Eklavya hosted the FISU World University Squash Championship.",,,,1
+sports,Table Tennis,0,0,30,An indoor arena with professional-grade tables and flooring for training and tournaments.,,,,2
+entrepreneurship,RIIDL,0,0,30,A technology business incubator supported by DST and DBT-BIRAC.,,,,1
+entrepreneurship,BIO RIIDL,0,0,30,India's first DIY Bio-Lab and incubator focused on life sciences and synthetic biology.,,,,2
+green_spaces,Nakshatra Garden,0,0,30,Features plants arranged according to astrological constellations (Nakshatras).,,,,1
+green_spaces,Somaiya Statue Area,0,0,30,A landscaped green patch built around the memorial statue of founder Karamshi Jethabhai Somaiya.,,,,2
+green_spaces,In front of Polytechnic,0,0,30,A popular student hang-out and event space outside the K. J. Somaiya Polytechnic building.,,,,3
+green_spaces,Botanical Garden,0,0,30,"Managed alongside the Department of Botany, housing a wide collection of plant species.",,,,4
+green_spaces,Biodiversity Garden,0,0,30,A dedicated ecological zone created to sustain local flora and fauna near the sports facilities and KJSIM.,,,,5

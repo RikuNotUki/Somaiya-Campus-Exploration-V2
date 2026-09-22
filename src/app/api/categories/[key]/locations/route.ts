@@ -38,7 +38,7 @@ export async function GET(
 
   const { data: locations, error: locErr } = await supabase
     .from("locations")
-    .select("id, name, lat, lng, proximity_radius_m, did_you_know, info_md, image_url, pdf_url, video_url, sort_order")
+    .select("id, name, lat, lng, proximity_radius_m, did_you_know, image_url, pdf_url, video_url, sort_order")
     .eq("category_id", category.id)
     .order("sort_order");
   if (locErr) return NextResponse.json({ error: locErr.message }, { status: 500 });

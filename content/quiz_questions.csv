@@ -1,7 +1,4 @@
 location_name,prompt,option_a,option_b,option_c,option_d,correct_option,shard_reward
-Main Gate & Reception,In what year was the main campus gate built? (placeholder),1985,1992,2001,2010,a,1
-Central Library,How many floors does the Central Library have? (placeholder),2,3,4,5,c,1
-KJ Statue,The KJ Statue commemorates which founder? (placeholder),Founder A,Founder B,Founder C,Founder D,b,1
 Engineering Canteen,What sustainable practice is carried out near the Engineering Canteen?,Solar power generation,Food waste vermicomposting,Rainwater harvesting,Plastic recycling,b,1
 Govindas Canteen,Which core architectural strategy was used in Govindas Canteen to help lower student stress?,Soundproof booths,Daylighting and natural light,Dark theme aesthetic,Rooftop seating,b,1
 Sports Canteen,Which iconic partner operates the Sports Canteen inside Eklavya Sports Complex?,Jimmy Boy,Cafe Coffee Day,Prithvi Cafe,Irani Chai Co.,a,1

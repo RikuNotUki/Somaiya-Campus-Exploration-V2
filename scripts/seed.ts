@@ -32,11 +32,18 @@ type LocationRow = {
   lng: string;
   proximity_radius_m: string;
   did_you_know: string;
-  info_md: string;
   image_url: string;
   pdf_url: string;
   video_url: string;
   sort_order: string;
+};
+
+type InfoCardRow = {
+  location_name: string;
+  sort_order: string;
+  title: string;
+  body: string;
+  image_url: string;
 };
 
 type QuizRow = {
@@ -96,6 +103,7 @@ async function main() {
     resolveSource("LOCATIONS_CSV_URL", "locations.csv")
   );
   const locationIdByName = new Map<string, string>();
+  const seenLocationIds = new Set<string>();
 
   for (const row of locationRows) {
     const categoryId = categoryIdByKey.get(row.category_key);
@@ -113,7 +121,6 @@ async function main() {
           lng: Number(row.lng),
           proximity_radius_m: Number(row.proximity_radius_m) || 40,
           did_you_know: row.did_you_know || null,
-          info_md: row.info_md || null,
           image_url: row.image_url || null,
           pdf_url: row.pdf_url || null,
           video_url: row.video_url || null,
@@ -125,6 +132,71 @@ async function main() {
       .single();
     if (error) throw error;
     locationIdByName.set(data.name, data.id);
+    seenLocationIds.add(data.id);
+  }
+
+  console.log("Removing locations that were deleted from the CSV...");
+  const { data: allLocations, error: allLocErr } = await supabase
+    .from("locations")
+    .select("id, name");
+  if (allLocErr) throw allLocErr;
+  const staleLocations = (allLocations ?? []).filter((l) => !seenLocationIds.has(l.id));
+  if (staleLocations.length > 0) {
+    console.log(`  Deleting ${staleLocations.length} stale location(s) (and their progress/quiz/cards, via cascade):`);
+    for (const l of staleLocations) console.log(`   - ${l.name}`);
+    const { error: delErr } = await supabase
+      .from("locations")
+      .delete()
+      .in("id", staleLocations.map((l) => l.id));
+    if (delErr) throw delErr;
+  }
+
+  console.log("Seeding info cards...");
+  const infoCardRows = await loadCsv<InfoCardRow>(
+    resolveSource("INFO_CARDS_CSV_URL", "info_cards.csv")
+  );
+  const locationsWithCards = new Set<string>();
+
+  for (const name of new Set(infoCardRows.map((r) => r.location_name))) {
+    const locationId = locationIdByName.get(name);
+    if (!locationId) continue;
+    // Replace any existing cards for this location with the CSV version.
+    await supabase.from("location_info_cards").delete().eq("location_id", locationId);
+  }
+
+  for (const row of infoCardRows) {
+    const locationId = locationIdByName.get(row.location_name);
+    if (!locationId) {
+      console.warn(`Skipping info card — unknown location "${row.location_name}"`);
+      continue;
+    }
+    locationsWithCards.add(row.location_name);
+    const { error } = await supabase.from("location_info_cards").insert({
+      location_id: locationId,
+      sort_order: Number(row.sort_order) || 0,
+      title: row.title || null,
+      body: row.body,
+      image_url: row.image_url || null,
+    });
+    if (error) throw error;
+  }
+
+  // Any location with no cards yet gets one placeholder so the flow still works end-to-end.
+  for (const [name, locationId] of locationIdByName) {
+    if (locationsWithCards.has(name)) continue;
+    const { data: existing } = await supabase
+      .from("location_info_cards")
+      .select("id")
+      .eq("location_id", locationId)
+      .limit(1);
+    if (existing && existing.length > 0) continue;
+    await supabase.from("location_info_cards").insert({
+      location_id: locationId,
+      sort_order: 0,
+      title: null,
+      body: `[Placeholder] Info about ${name} coming soon.`,
+      image_url: null,
+    });
   }
 
   console.log("Seeding quiz questions...");
