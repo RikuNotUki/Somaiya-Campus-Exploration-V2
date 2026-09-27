@@ -15,12 +15,8 @@ type Question = {
   option_d: string;
 };
 
-export default function QuizPage({
-  params,
-}: {
-  params: Promise<{ key: string; locationId: string }>;
-}) {
-  const { key, locationId } = use(params);
+export default function QuizPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id: locationId } = use(params);
   const router = useRouter();
   const [question, setQuestion] = useState<Question | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -53,10 +49,12 @@ export default function QuizPage({
     setSubmitting(false);
   }
 
+  const backHref = `/tour/location/${locationId}`;
+
   if (error) {
     return (
       <Frame>
-        <TopBar back={`/tour/${key}`} />
+        <TopBar back={backHref} />
         <p style={{ color: "var(--color-gem-ruby)" }}>{error}</p>
       </Frame>
     );
@@ -65,7 +63,7 @@ export default function QuizPage({
   if (!question) {
     return (
       <Frame>
-        <TopBar back={`/tour/${key}`} />
+        <TopBar back={backHref} />
         <p style={{ color: "var(--color-ink-soft)" }}>Loading…</p>
       </Frame>
     );
@@ -80,7 +78,7 @@ export default function QuizPage({
 
   return (
     <Frame>
-      <TopBar back={`/tour/${key}`} />
+      <TopBar back={backHref} />
       <div
         className="rounded-[11px] flex items-center justify-center h-20 mb-5 px-4 text-center"
         style={{ background: "var(--color-surface-muted)" }}
@@ -134,7 +132,7 @@ export default function QuizPage({
                 </div>
               )}
               <div className="mt-4">
-                <PrimaryButton onClick={() => router.push(`/tour/${key}`)}>Back to tour</PrimaryButton>
+                <PrimaryButton onClick={() => router.push("/tour")}>Back to map</PrimaryButton>
               </div>
             </>
           ) : (
