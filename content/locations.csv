@@ -1,16 +1,11 @@
 category_key,name,lat,lng,proximity_radius_m,did_you_know,image_url,pdf_url,video_url,sort_order
-institute_tour,SSD (Bhaskaracharya Block),0,0,40,Placeholder teaser fact about SSD — real content to follow.,,,,1
-campus_history,Somaiya Statue,0,0,40,Placeholder teaser fact about the Somaiya Statue — real content to follow.,,,,1
-hidden_places,Secret Courtyard,19.0700,72.9020,30,Placeholder hidden-place fact.,,,,1
-hidden_places,Old Well,19.0697,72.9023,30,Placeholder hidden-place fact.,,,,2
-hidden_places,Rooftop Viewpoint,19.0694,72.9026,30,Placeholder hidden-place fact.,,,,3
-hidden_places,Forgotten Mural,19.0691,72.9029,30,Placeholder hidden-place fact.,,,,4
-hidden_places,Quiet Reading Nook,19.0688,72.9032,30,Placeholder hidden-place fact.,,,,5
-canteen,Engineering Canteen,0,0,30,Food waste from campus canteens is composted right here as part of the Green Campus Initiative.,,,,1
-canteen,Govindas Canteen,0,0,30,"Runs on a ""Three Foods"" philosophy: food for thought, food for health, and food for the soul.",,,,2
-canteen,Sports Canteen,0,0,30,"Runs as a dedicated cafe inside the Eklavya Sports Complex, operated in partnership with Jimmy Boy.",,,,3
-canteen,Aurobindo Canteen,0,0,30,Its food waste feeds a biogas plant located right behind the canteen.,,,,4
-heritage,Kutchi Haveli,0,0,30,"Built using ""recycled"" architectural parts salvaged from old buildings in Kutch villages.",,,,1
+institute_tour,SSD (Bhaskaracharya Block),19.07250223,72.90030293,40,Placeholder teaser fact about SSD — real content to follow.,,,,1
+campus_history,Somaiya Statue,19.07406173,72.89976626,40,Placeholder teaser fact about the Somaiya Statue — real content to follow.,,,,1
+canteen,Engineering Canteen,19.07319258,72.90015015,30,Food waste from campus canteens is composted right here as part of the Green Campus Initiative.,,,,1
+canteen,Govindas Canteen,19.07226297,72.89759102,30,"Runs on a ""Three Foods"" philosophy: food for thought, food for health, and food for the soul.",,,,2
+canteen,Sports Canteen,19.07336906,72.89792476,30,"Runs as a dedicated cafe inside the Eklavya Sports Complex, operated in partnership with Jimmy Boy.",,,,3
+canteen,Aurobindo Canteen,19.07609517,72.89910454,30,Its food waste feeds a biogas plant located right behind the canteen.,,,,4
+heritage,Kutchi Haveli,19.07377937,72.89954698,30,"Built using ""recycled"" architectural parts salvaged from old buildings in Kutch villages.",,,,1
 heritage,Saraswati,0,0,30,"Built with a central courtyard featuring a Tulsi plant and a water fountain, evoking the sound of a flowing river.",,,,2
 heritage,Sanskriti Vihara,0,0,30,"Connected to the Somaiya Bharatiya Sanskriti Peetham, founded for deep study of Vedic religion and interfaith dialogue.",,,,3
 sports,Basketball Court (Eklavya),0,0,30,"In 2026, Eklavya hosted the FISU World University Squash Championship.",,,,1
