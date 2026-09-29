@@ -232,13 +232,13 @@ export default function LocationDetailPage({ params }: { params: Promise<{ id: s
           />
         </div>
       ) : (
-        <>
+        <div className="flex-1 flex flex-col">
           <div
             ref={mapDivRef}
-            className="rounded-[11px] overflow-hidden"
-            style={{ minHeight: 260, background: "var(--color-surface-muted)" }}
+            className="flex-1 rounded-[11px] overflow-hidden"
+            style={{ minHeight: 420, background: "var(--color-surface-muted)" }}
           />
-          <div className="flex flex-col items-center gap-2 py-5">
+          <div className="flex flex-col items-center gap-2 py-4">
             <div className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: "var(--color-accent)" }} />
             <p className="text-sm text-center" style={{ color: "var(--color-ink-soft)" }}>
               {status === "watching"
@@ -246,7 +246,7 @@ export default function LocationDetailPage({ params }: { params: Promise<{ id: s
                 : "Waiting for location access…"}
             </p>
           </div>
-        </>
+        </div>
       )}
 
       {locError && (
