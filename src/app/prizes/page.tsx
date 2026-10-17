@@ -9,6 +9,7 @@ import { GemInventory, GemType, GEM_TYPES } from "@/lib/gems";
 type Prize = {
   id: string;
   name: string;
+  imageUrl: string | null;
   recipe: Partial<Record<GemType, number>>;
   progress: { canRedeem: boolean; totalHave: number; totalNeed: number };
 };
@@ -48,29 +49,44 @@ export default function PrizesPage() {
             : 0;
           return (
             <Link key={p.id} href={`/prizes/${p.id}`}>
-              <Card className="p-4 border" style={{ borderColor: "var(--color-border)" }}>
-                <div className="flex items-center justify-between mb-2">
-                  <p className="font-bold" style={{ color: "var(--color-ink)" }}>
-                    {p.name}
-                  </p>
-                  {p.progress.canRedeem && (
-                    <span className="text-xs font-medium" style={{ color: "var(--color-success)" }}>
-                      Ready to redeem
+              <Card className="p-4 border flex gap-3" style={{ borderColor: "var(--color-border)" }}>
+                <div
+                  className="w-14 h-14 rounded-[8px] overflow-hidden shrink-0 flex items-center justify-center"
+                  style={{ background: "var(--color-surface-muted)" }}
+                >
+                  {p.imageUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={p.imageUrl} alt={p.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-[9px]" style={{ color: "var(--color-ink-faint)" }}>
+                      photo
                     </span>
                   )}
                 </div>
-                <div className="h-2.5 rounded-full w-full overflow-hidden" style={{ background: "var(--color-border)" }}>
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${pct}%`,
-                      background: p.progress.canRedeem ? "var(--color-success)" : "var(--color-accent)",
-                    }}
-                  />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="font-bold" style={{ color: "var(--color-ink)" }}>
+                      {p.name}
+                    </p>
+                    {p.progress.canRedeem && (
+                      <span className="text-xs font-medium" style={{ color: "var(--color-success)" }}>
+                        Ready to redeem
+                      </span>
+                    )}
+                  </div>
+                  <div className="h-2.5 rounded-full w-full overflow-hidden" style={{ background: "var(--color-border)" }}>
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: `${pct}%`,
+                        background: p.progress.canRedeem ? "var(--color-success)" : "var(--color-accent)",
+                      }}
+                    />
+                  </div>
+                  <p className="text-xs mt-1.5" style={{ color: "var(--color-ink-soft)" }}>
+                    {p.progress.totalHave} / {p.progress.totalNeed} gems collected
+                  </p>
                 </div>
-                <p className="text-xs mt-1.5" style={{ color: "var(--color-ink-soft)" }}>
-                  {p.progress.totalHave} / {p.progress.totalNeed} gems collected
-                </p>
               </Card>
             </Link>
           );

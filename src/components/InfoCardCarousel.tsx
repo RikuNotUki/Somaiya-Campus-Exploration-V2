@@ -59,9 +59,14 @@ export default function InfoCardCarousel({
   return (
     <div className="flex flex-col gap-3">
       <div
-        className="rounded-[11px] p-4 min-h-[110px] flex flex-col justify-center"
+        className="rounded-[11px] overflow-hidden flex flex-col justify-center"
         style={{ background: "var(--color-surface-muted)" }}
       >
+        {card.image_url && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={card.image_url} alt={card.title ?? ""} className="w-full h-36 object-cover" />
+        )}
+        <div className="p-4">
         {card.title && (
           <p className="font-bold text-sm mb-1" style={{ color: "var(--color-ink)" }}>
             {card.title}
@@ -70,6 +75,7 @@ export default function InfoCardCarousel({
         <p className="text-sm leading-relaxed" style={{ color: "var(--color-ink-soft)" }}>
           {card.body}
         </p>
+        </div>
       </div>
 
       <div className="flex items-center justify-between">

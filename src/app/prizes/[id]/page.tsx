@@ -8,6 +8,7 @@ import { GemType } from "@/lib/gems";
 type Prize = {
   id: string;
   name: string;
+  imageUrl: string | null;
   recipe: Partial<Record<GemType, number>>;
   progress: {
     canRedeem: boolean;
@@ -83,12 +84,17 @@ export default function PrizeDetailPage({ params }: { params: Promise<{ id: stri
     <Frame>
       <TopBar title={prize.name} back="/prizes" />
       <div
-        className="rounded-[11px] flex items-center justify-center h-40 mb-5"
+        className="rounded-[11px] flex items-center justify-center h-40 mb-5 overflow-hidden"
         style={{ background: "var(--color-surface-muted)" }}
       >
-        <span className="text-sm" style={{ color: "var(--color-ink-faint)" }}>
-          prize photo
-        </span>
+        {prize.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={prize.imageUrl} alt={prize.name} className="w-full h-full object-cover" />
+        ) : (
+          <span className="text-sm" style={{ color: "var(--color-ink-faint)" }}>
+            prize photo
+          </span>
+        )}
       </div>
 
       <p className="font-bold mb-3" style={{ color: "var(--color-ink)" }}>
