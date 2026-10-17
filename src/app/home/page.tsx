@@ -63,20 +63,16 @@ export default function HomePage() {
         </span>
       </div>
 
-      <Link href="/prizes" className="block mt-5">
-        <Card
-          muted
-          className="h-24 flex items-center justify-center font-bold text-lg"
-          style={{ color: "var(--color-ink)" }}
+      <Link href="/tour" className="block mt-5 relative">
+        <span
+          className="absolute -top-2.5 left-3 z-10 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full text-white"
+          style={{ background: "var(--color-accent)" }}
         >
-          Win Merchandise
-        </Card>
-      </Link>
-
-      <Link href="/tour" className="block mt-5">
+          Next step
+        </span>
         <div
-          className="h-[180px] rounded-[11px] relative overflow-hidden flex items-end justify-center"
-          style={{ background: "var(--color-surface-muted)" }}
+          className="h-[180px] rounded-[11px] relative overflow-hidden flex items-end justify-center ring-2"
+          style={{ background: "var(--color-surface-muted)", boxShadow: "0 0 0 2px var(--color-accent)" }}
         >
           <div
             className="absolute inset-0 flex items-center justify-center text-sm"
@@ -106,6 +102,15 @@ export default function HomePage() {
       </Card>
 
       <div className="flex-1" />
+
+      <Link href="/prizes" className="block mt-5">
+        <Card
+          className="h-20 flex items-center justify-center font-bold text-lg text-white"
+          style={{ background: "var(--color-gem-diamond)" }}
+        >
+          Win Merchandise
+        </Card>
+      </Link>
       <Link
         href="/shards"
         className="text-center text-sm underline mt-4"

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Frame from "@/components/Frame";
-import { TopBar, Card, GemChip } from "@/components/ui";
+import { TopBar, Card, GemChip, GemDot } from "@/components/ui";
 import { GemInventory, GemType, GEM_TYPES } from "@/lib/gems";
 
 type Prize = {
@@ -44,9 +44,9 @@ export default function PrizesPage() {
       <div className="flex-1 flex flex-col gap-3 overflow-y-auto">
         {!prizes && <p style={{ color: "var(--color-ink-soft)" }}>Loading…</p>}
         {prizes?.map((p) => {
-          const pct = p.progress.totalNeed
-            ? Math.round((p.progress.totalHave / p.progress.totalNeed) * 100)
-            : 0;
+          const required = (Object.entries(p.recipe) as [GemType, number][]).filter(
+            ([, need]) => need > 0
+          );
           return (
             <Link key={p.id} href={`/prizes/${p.id}`}>
               <Card className="p-4 border flex gap-3" style={{ borderColor: "var(--color-border)" }}>
@@ -74,18 +74,23 @@ export default function PrizesPage() {
                       </span>
                     )}
                   </div>
-                  <div className="h-2.5 rounded-full w-full overflow-hidden" style={{ background: "var(--color-border)" }}>
-                    <div
-                      className="h-full rounded-full"
-                      style={{
-                        width: `${pct}%`,
-                        background: p.progress.canRedeem ? "var(--color-success)" : "var(--color-accent)",
-                      }}
-                    />
+                  <div className="flex items-center gap-3 flex-wrap">
+                    {required.map(([type, need]) => {
+                      const have = Math.min(inventory?.[type] ?? 0, need);
+                      const met = have >= need;
+                      return (
+                        <div key={type} className="flex items-center gap-1.5">
+                          <GemDot type={type} size={16} />
+                          <span
+                            className="text-xs font-medium"
+                            style={{ color: met ? "var(--color-success)" : "var(--color-ink-soft)" }}
+                          >
+                            {have}/{need}
+                          </span>
+                        </div>
+                      );
+                    })}
                   </div>
-                  <p className="text-xs mt-1.5" style={{ color: "var(--color-ink-soft)" }}>
-                    {p.progress.totalHave} / {p.progress.totalNeed} gems collected
-                  </p>
                 </div>
               </Card>
             </Link>

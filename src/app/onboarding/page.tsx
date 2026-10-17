@@ -18,16 +18,19 @@ export default function OnboardingPage() {
         <h1 className="text-xl font-bold text-center" style={{ color: "var(--color-ink)" }}>
           What is Campus Explorer?
         </h1>
-        <p className="text-sm leading-relaxed" style={{ color: "var(--color-ink-soft)" }}>
-          Walk the campus, visit real spots across 7 categories, and answer a quick quiz
-          at each one. Correct answers earn shards — collect 5 shards to crystallise a
-          Joker Gem. Some spots also hide a gem of their own, but you won&apos;t know how
-          many are out there, so it pays to visit every location in a category.
-        </p>
-        <p className="text-sm leading-relaxed" style={{ color: "var(--color-ink-soft)" }}>
-          Start with the Institute Tour and Campus History — finishing both unlocks the
-          rest of the map.
-        </p>
+        <ul className="text-sm leading-relaxed space-y-2.5" style={{ color: "var(--color-ink-soft)" }}>
+          <li>• Walk the campus and visit real spots, grouped into 7 categories.</li>
+          <li>• At each spot, answer a quick quiz — correct answers earn you shards.</li>
+          <li>• Collect 5 shards to crystallise them into a Joker Gem.</li>
+          <li>
+            • Some spots also hide a gem of their own — but you won&apos;t know how many,
+            so it pays to visit every location in a category.
+          </li>
+          <li>
+            • Start with the Institute Tour and Campus History — finishing both unlocks
+            the rest of the map.
+          </li>
+        </ul>
         <div className="flex items-center justify-center gap-3 py-4">
           {GEM_TYPES.map((g) => (
             <GemDot key={g} type={g} size={20} />

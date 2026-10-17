@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { GEM_META, GemType } from "@/lib/gems";
 
@@ -74,7 +75,28 @@ export function Card({
   );
 }
 
+// Looks for a custom icon at /public/gems/<type>.png first (drop a file in there
+// with that exact name — joker.png, diamond.png, ruby.png, sapphire.png, emerald.png,
+// onyx.png — and it's picked up automatically, no code changes needed). Falls back
+// to a plain coloured diamond shape until a custom icon is added.
 export function GemDot({ type, size = 13 }: { type: GemType; size?: number }) {
+  const [iconFailed, setIconFailed] = useState(false);
+
+  if (!iconFailed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={`/gems/${type}.png`}
+        alt={GEM_META[type].label}
+        width={size}
+        height={size}
+        className="inline-block shrink-0 object-contain"
+        style={{ width: size, height: size }}
+        onError={() => setIconFailed(true)}
+      />
+    );
+  }
+
   return (
     <span
       className="inline-block rotate-45 rounded-[2px] shrink-0"

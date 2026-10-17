@@ -16,10 +16,30 @@ export default function GemRulesPage() {
         </div>
 
         <h2 className="text-lg font-bold" style={{ color: "var(--color-ink)" }}>
+          What&apos;s a category?
+        </h2>
+        <ul className="text-sm space-y-2" style={{ color: "var(--color-ink-soft)" }}>
+          <li>
+            • The campus map is split into 7 categories, like Canteen / Eateries, Heritage,
+            Sports, Entrepreneurship, Green Spaces, and Hidden Places — each is a themed
+            group of real locations.
+          </li>
+          <li>• Every category is tied to its own gem type, shown by its colour.</li>
+          <li>
+            • Institute Tour and Campus History are the starting categories — complete every
+            location in both before the rest of the categories unlock.
+          </li>
+        </ul>
+
+        <h2 className="text-lg font-bold" style={{ color: "var(--color-ink)" }}>
           How gems work
         </h2>
         <ul className="text-sm space-y-2" style={{ color: "var(--color-ink-soft)" }}>
-          <li>• Each category can hide a gem at some of its locations — you won&apos;t know how many.</li>
+          <li>
+            • Each category can hide a gem of its own colour at some of its locations —
+            you won&apos;t know how many, so visiting every location gives you the best
+            chance.
+          </li>
           <li>• Joker Gems are wildcards — they count as any gem type when redeeming a prize.</li>
           <li>• Combine 5 shards to crystallise your own Joker Gem.</li>
         </ul>
