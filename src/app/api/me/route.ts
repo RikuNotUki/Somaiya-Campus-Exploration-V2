@@ -11,7 +11,7 @@ export async function GET() {
   const supabase = getSupabaseServer();
   const { data: student, error } = await supabase
     .from("students")
-    .select("id, student_code, display_name")
+    .select("id, student_code, display_name, is_tester")
     .eq("id", studentId)
     .maybeSingle();
   if (error || !student) {
@@ -28,7 +28,12 @@ export async function GET() {
   const totalGems = Object.values(inventory).reduce((s, n) => s + n, 0);
 
   return NextResponse.json({
-    student: { id: student.id, studentCode: student.student_code, displayName: student.display_name },
+    student: {
+      id: student.id,
+      studentCode: student.student_code,
+      displayName: student.display_name,
+      isTester: student.is_tester,
+    },
     inventory,
     totalGems,
     shardsAvailable,

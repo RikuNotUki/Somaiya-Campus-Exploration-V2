@@ -1,3 +1,4 @@
-student_code,password,display_name
-swayam,demo1234,Swayam
-demo,demo1234,Demo Student
+student_code,password,display_name,is_tester
+swayam,demo1234,Swayam,false
+demo,demo1234,Demo Student,false
+tester,test1234,Tester,true

@@ -25,7 +25,14 @@ export async function POST(
   if (locErr) return NextResponse.json({ error: locErr.message }, { status: 500 });
   if (!location) return NextResponse.json({ error: "Location not found" }, { status: 404 });
 
-  const within = isWithinRadius(lat, lng, location.lat, location.lng, location.proximity_radius_m);
+  const { data: student } = await supabase
+    .from("students")
+    .select("is_tester")
+    .eq("id", studentId)
+    .maybeSingle();
+
+  const within =
+    student?.is_tester || isWithinRadius(lat, lng, location.lat, location.lng, location.proximity_radius_m);
   if (!within) {
     return NextResponse.json({ arrived: false, message: "You're not close enough yet — keep walking!" });
   }

@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import Frame from "@/components/Frame";
 import { TopBar, GemDot } from "@/components/ui";
 import InfoCardCarousel from "@/components/InfoCardCarousel";
+import { PrimaryButton } from "@/components/ui";
 import { GemType } from "@/lib/gems";
 
 type LocationDetail = {
@@ -32,6 +33,8 @@ export default function LocationDetailPage({ params }: { params: Promise<{ id: s
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "watching" | "error">("idle");
   const [locError, setLocError] = useState<string | null>(null);
+  const [isTester, setIsTester] = useState(false);
+  const [skipping, setSkipping] = useState(false);
 
   const mapDivRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<LeafletMap | null>(null);
@@ -50,6 +53,28 @@ export default function LocationDetailPage({ params }: { params: Promise<{ id: s
   }
 
   useEffect(load, [id]);
+
+  useEffect(() => {
+    fetch("/api/me")
+      .then((r) => r.json())
+      .then((data) => setIsTester(!!data?.student?.isTester))
+      .catch(() => {});
+  }, []);
+
+  async function handleSkipVerification() {
+    setSkipping(true);
+    try {
+      const res = await fetch(`/api/locations/${id}/geotag`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lat: loc?.lat ?? 0, lng: loc?.lng ?? 0 }),
+      });
+      const data = await res.json();
+      if (res.ok && data.arrived) load();
+    } finally {
+      setSkipping(false);
+    }
+  }
 
   // Live map: draws a walking route (via OSRM) from the student's current
   // position to this pin, updating as they move.
@@ -245,6 +270,13 @@ export default function LocationDetailPage({ params }: { params: Promise<{ id: s
                 ? "Follow the route — we'll unlock this spot automatically when you arrive."
                 : "Waiting for location access…"}
             </p>
+            {isTester && (
+              <div className="w-full max-w-[220px] mt-2">
+                <PrimaryButton variant="outline" onClick={handleSkipVerification} disabled={skipping}>
+                  {skipping ? "Skipping…" : "Skip verification (tester)"}
+                </PrimaryButton>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -26,6 +26,7 @@ create table if not exists students (
   student_code text unique not null,       -- the "Pre-Set User" login id
   password_hash text not null,             -- bcrypt hash of "Pre-Set Password"
   display_name text not null,
+  is_tester boolean not null default false, -- testers bypass the proximity/geo-tag check entirely
   created_at timestamptz not null default now()
 );
 

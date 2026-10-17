@@ -68,6 +68,7 @@ type StudentRow = {
   student_code: string;
   password: string;
   display_name: string;
+  is_tester?: string;
 };
 
 async function main() {
@@ -286,6 +287,7 @@ async function main() {
         student_code: row.student_code,
         password_hash,
         display_name: row.display_name,
+        is_tester: (row.is_tester ?? "false").toLowerCase() === "true",
       },
       { onConflict: "student_code" }
     );
