@@ -21,13 +21,13 @@ export default function GemRulesPage() {
         <ul className="text-sm space-y-2" style={{ color: "var(--color-ink-soft)" }}>
           <li>
             • The campus map is split into 7 categories, like Canteen / Eateries, Heritage,
-            Sports, Entrepreneurship, Green Spaces, and Hidden Places — each is a themed
+            Sports, Entrepreneurship, Green Spaces, and Hidden Places. Each is a themed
             group of real locations.
           </li>
           <li>• Every category is tied to its own gem type, shown by its colour.</li>
           <li>
-            • Institute Tour and Campus History are the starting categories — complete every
-            location in both before the rest of the categories unlock.
+            • Institute Tour and Campus History are must visits, check out both
+            locations before the rest of the categories unlock.
           </li>
         </ul>
 
@@ -36,11 +36,11 @@ export default function GemRulesPage() {
         </h2>
         <ul className="text-sm space-y-2" style={{ color: "var(--color-ink-soft)" }}>
           <li>
-            • Each category can hide a gem of its own colour at some of its locations —
+            • Each category can hide a gem of its own colour at some of its locations, 
             you won&apos;t know how many, so visiting every location gives you the best
             chance.
           </li>
-          <li>• Joker Gems are wildcards — they count as any gem type when redeeming a prize.</li>
+          <li>• Joker Gems are wildcards, they count as any gem type when redeeming a prize.</li>
           <li>• Combine 5 shards to crystallise your own Joker Gem.</li>
         </ul>
 
@@ -48,7 +48,7 @@ export default function GemRulesPage() {
           How to use
         </h2>
         <ul className="text-sm space-y-2" style={{ color: "var(--color-ink-soft)" }}>
-          <li>• Walk to a location, geo-tag it, read the info, then answer the quiz.</li>
+          <li>• Walk to a location, read the info, then answer the quiz.</li>
           <li>• Redeem gems for prizes — you&apos;ll get a code to bring to the prize desk.</li>
         </ul>
 
