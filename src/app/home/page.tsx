@@ -68,7 +68,7 @@ export default function HomePage() {
           className="absolute -top-2.5 left-3 z-10 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full text-white"
           style={{ background: "var(--color-accent)" }}
         >
-          Next step
+          Start Exploring
         </span>
         <div
           className="h-[180px] rounded-[11px] relative overflow-hidden flex items-end justify-center ring-2"
